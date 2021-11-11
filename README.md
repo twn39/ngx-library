@@ -1,27 +1,80 @@
 # NgxLibrary
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
 
-## Development server
+## Library
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* ngx-simple-i18n
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Ngx-simple-i18n
 
-## Build
+Simple I18n library for angular, support storage for cache with TTL.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+**Install:**
 
-## Running unit tests
+```shell
+npm i ngx-simple-i18n --save
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**Usage:**
 
-## Running end-to-end tests
+Import modules:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```ts
+import {NgxSimpleI18nModule} from 'ngx-simple-i18n';
 
-## Further help
+@NgModule({
+  imports: [
+    NgxSimpleI18nModule,
+  ]
+})
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Configure:
+
+```ts
+import {SimpleI18n} from 'ngx-simple-i18n';
+
+class AppComponent implements OnInit {
+  constructor(
+    private simpleI18n: SimpleI18n,
+  ){}
+  
+  ngOnInit() {
+    // the callback is usefull for custom data source, return the k/v map object
+    this.simpleI18n.setLanguage('zh', async() => zhData, sessionStorage, 60 * 1000);
+    this.simpleI18n.setLanguage('en', async() => enData, localStorage, 60 * 1000)
+    this.simpleI18n.switchLanguage('zh');
+  }
+}
+```
+
+Use in template with pipe:
+
+```html
+ {{"title" | T | async}}
+```
+
+Use in component:
+
+```ts
+import {SimpleI18n} from 'ngx-simple-i18n';
+
+class AppComponent implements OnInit {
+  constructor(
+    private simpleI18n: SimpleI18n,
+  ){}
+
+  ngOnInit() {
+    this.simpleI18n.translation$.subscribe(data => {
+      console.log(data);
+    })
+  }
+}
+```
+
+
+
+
+
+

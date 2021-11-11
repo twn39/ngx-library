@@ -15,7 +15,7 @@ export class LangItem {
   public data?: LangItemData;
   public source: CallBack
 
-  constructor(id: string, source: CallBack, storage = null, ttl = 0) {
+  constructor(id: string, source: CallBack, storage: Storage|null, ttl = 0) {
     this.id = id;
     this.source = source;
     this.storage = storage;
@@ -36,7 +36,7 @@ export class SimpleI18n {
     this.prefix = prefix;
   }
 
-  setLanguage(id: string, callback: CallBack, storage = null, ttl = 0) {
+  setLanguage(id: string, callback: CallBack, storage: Storage|null, ttl = 0) {
     this.data[id] = new LangItem(id, callback, storage, ttl);
   }
 
