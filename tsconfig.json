@@ -11,6 +11,12 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
+    "paths": {
+      "ngx-simple-i18n": [
+        "dist/ngx-simple-i18n/ngx-simple-i18n",
+        "dist/ngx-simple-i18n"
+      ]
+    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
