@@ -36,7 +36,7 @@ export class SimpleI18n {
     this.prefix = prefix;
   }
 
-  setLanguage(id: string, callback: CallBack, storage: Storage|null, ttl = 0) {
+  setLanguage(id: string, callback: CallBack, storage = null, ttl = 0) {
     this.data[id] = new LangItem(id, callback, storage, ttl);
   }
 
