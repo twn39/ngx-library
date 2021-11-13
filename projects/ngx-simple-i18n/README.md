@@ -1,24 +1,67 @@
-# NgxSimpleI18n
+### Ngx-simple-i18n
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.0.
+Simple I18n library for angular, support storage for cache with TTL.
 
-## Code scaffolding
+**Install:**
 
-Run `ng generate component component-name --project ngx-simple-i18n` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-simple-i18n`.
-> Note: Don't forget to add `--project ngx-simple-i18n` or else it will be added to the default project in your `angular.json` file. 
+```shell
+npm i ngx-simple-i18n --save
+```
 
-## Build
+**Usage:**
 
-Run `ng build ngx-simple-i18n` to build the project. The build artifacts will be stored in the `dist/` directory.
+Import modules:
 
-## Publishing
+```ts
+import {NgxSimpleI18nModule} from 'ngx-simple-i18n';
 
-After building your library with `ng build ngx-simple-i18n`, go to the dist folder `cd dist/ngx-simple-i18n` and run `npm publish`.
+@NgModule({
+  imports: [
+    NgxSimpleI18nModule,
+  ]
+})
+```
 
-## Running unit tests
+Configure:
 
-Run `ng test ngx-simple-i18n` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```ts
+import {SimpleI18n} from 'ngx-simple-i18n';
 
-## Further help
+class AppComponent implements OnInit {
+  constructor(
+    private simpleI18n: SimpleI18n,
+  ){}
+  
+  ngOnInit() {
+    // the callback is usefull for custom data source, return the k/v map object
+    this.simpleI18n.setLanguage('zh', async() => zhData, sessionStorage, 60 * 1000);
+    this.simpleI18n.setLanguage('en', async() => enData, localStorage, 60 * 1000)
+    this.simpleI18n.switchLanguage('zh');
+  }
+}
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Use in template with pipe:
+
+```html
+ {{"title" | T | async}}
+```
+
+Use in component:
+
+```ts
+import {SimpleI18n} from 'ngx-simple-i18n';
+
+class AppComponent implements OnInit {
+  constructor(
+    private simpleI18n: SimpleI18n,
+  ){}
+
+  ngOnInit() {
+    this.simpleI18n.translation$.subscribe(data => {
+      console.log(data);
+    })
+  }
+}
+```
+
