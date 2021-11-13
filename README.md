@@ -41,9 +41,11 @@ class AppComponent implements OnInit {
   ){}
   
   ngOnInit() {
+    const zhData = {title: '标题', description: '描述'};
+    const enData = {title: 'title', description: 'description'};
     // the callback is usefull for custom data source, return the k/v map object
     this.simpleI18n.setLanguage('zh', async() => zhData, sessionStorage, 60 * 1000);
-    this.simpleI18n.setLanguage('en', async() => enData, localStorage, 60 * 1000)
+    this.simpleI18n.setLanguage('en', async() => enData, localStorage, 60 * 1000);
     this.simpleI18n.switchLanguage('zh');
   }
 }
@@ -52,8 +54,10 @@ class AppComponent implements OnInit {
 Use in template with pipe:
 
 ```html
- {{"title" | T | async}}
+ {{"title" | T}}
 ```
+
+the pipe will automatically unsubscribe from the `Observable`.
 
 Use in component:
 
