@@ -1,6 +1,6 @@
 {
   "name": "ngx-vconsole-logger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author": "twn39",
   "description": "Vconsole for angular.",
@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/twn39/ngx-library/issues"
   },
-  "homepage": "https://github.com/twn39/ngx-library",
+  "homepage": "https://github.com/twn39/ngx-library/tree/master/projects/ngx-vconsole-logger",
   "peerDependencies": {
     "@angular/common": "^12.0.0",
     "@angular/core": "^12.0.0",

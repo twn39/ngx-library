@@ -2,7 +2,7 @@
 
 A simple vConsole integration for angular. 
 
-![ngx-vconsole-logger](ngx-vconsole-logger.png)
+![ngx-vconsole-logger](https://raw.githubusercontent.com/twn39/ngx-library/master/projects/ngx-vconsole-logger/ngx-vconsole-logger.png)
 
 ### Install
 
