@@ -1,6 +1,6 @@
-import {BehaviorSubject, Observable} from 'rxjs';
-import {Pipe, PipeTransform} from '@angular/core';
-import {pluck} from 'rxjs/operators';
+import {BehaviorSubject, Observable, Subscribable, Subscription} from 'rxjs';
+import {ChangeDetectorRef, OnDestroy, Pipe, PipeTransform} from '@angular/core';
+import {map} from 'rxjs/operators';
 
 export type LangItemData = {
   [key: string]: string
@@ -36,7 +36,7 @@ export class SimpleI18n {
     this.prefix = prefix;
   }
 
-  setLanguage(id: string, callback: CallBack, storage = null, ttl = 0) {
+  setLanguage(id: string, callback: CallBack, storage: Storage | null = null, ttl = 0) {
     this.data[id] = new LangItem(id, callback, storage, ttl);
   }
 
@@ -95,16 +95,52 @@ export const simpleI18nProvider = {
 }
 
 
-@Pipe({
-  name: 'T',
-  pure: false,
-})
-export class I18nTranslatePipe implements PipeTransform {
+@Pipe({name: 'T', pure: false})
+export class I18nTranslatePipe implements OnDestroy, PipeTransform {
 
-  constructor(private simpleI18n: SimpleI18n) {}
+  private _latestValue: any = '';
+  private _subscription: Subscription | null = null;
+  private _i18n$: Observable<any> | null = null;
+  private _currentValue: string | null  = null;
 
-  transform(value: string, ...args: unknown[]): Observable<string> {
-    return this.simpleI18n.translation$.pipe(pluck(value));
+  constructor(
+    private simpleI18n: SimpleI18n,
+    private _cdRef: ChangeDetectorRef,
+  ) {}
+
+  transform(value: string, ...args: unknown[]): string {
+    if (!this._i18n$) {
+      this._currentValue = value;
+      this._i18n$ = this.simpleI18n.translation$;
+      this._subscription = this._i18n$.pipe(map(x => x?.[value])).subscribe(it => {
+        this._latestValue = it;
+        this._cdRef.markForCheck();
+      });
+      return this._latestValue;
+    }
+    /**
+    When the reference of the expression changes, the input value
+    will change, so unsubscribes from the old `Observable` and subscribes to the new one.
+    */
+    if (this._currentValue !== value) {
+      this._dispose();
+      return this.transform(value);
+    }
+
+    return this._latestValue;
+  }
+
+  private _dispose(): void {
+    if (this._subscription) {
+      this._subscription.unsubscribe();
+    }
+    this._latestValue = '';
+    this._i18n$ = null;
+    this._subscription = null;
+  }
+
+  ngOnDestroy() {
+    this._dispose();
   }
 }
 
