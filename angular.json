@@ -136,6 +136,37 @@
           }
         }
       }
+    },
+    "ngx-vconsole-logger": {
+      "projectType": "library",
+      "root": "projects/ngx-vconsole-logger",
+      "sourceRoot": "projects/ngx-vconsole-logger/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-vconsole-logger/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-vconsole-logger/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-vconsole-logger/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-vconsole-logger/src/test.ts",
+            "tsConfig": "projects/ngx-vconsole-logger/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-vconsole-logger/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngx-simple-i18n"

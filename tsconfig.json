@@ -15,6 +15,10 @@
       "ngx-simple-i18n": [
         "dist/ngx-simple-i18n/ngx-simple-i18n",
         "dist/ngx-simple-i18n"
+      ],
+      "ngx-vconsole-logger": [
+        "dist/ngx-vconsole-logger/ngx-vconsole-logger",
+        "dist/ngx-vconsole-logger"
       ]
     },
     "declaration": false,
