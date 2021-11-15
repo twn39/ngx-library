@@ -29,7 +29,7 @@ class NgxVConsoleLogger implements IVconsoleLogger {
     new VConsole();
   }
   debug(...msg: any[]) {
-    console.debug(msg);
+    console.debug(...msg);
   };
   error(...msg: any[]) {
     console.error(...msg);
