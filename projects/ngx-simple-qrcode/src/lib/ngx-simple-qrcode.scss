@@ -1,0 +1,9 @@
+:host {
+  display: inline-flex;
+}
+.ngx-simple-qrcode {
+  display: inline-block;
+  img {
+    display: block;
+  }
+}
