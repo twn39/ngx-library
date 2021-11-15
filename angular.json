@@ -167,6 +167,37 @@
           }
         }
       }
+    },
+    "ngx-simple-qrcode": {
+      "projectType": "library",
+      "root": "projects/ngx-simple-qrcode",
+      "sourceRoot": "projects/ngx-simple-qrcode/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-simple-qrcode/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-simple-qrcode/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-simple-qrcode/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-simple-qrcode/src/test.ts",
+            "tsConfig": "projects/ngx-simple-qrcode/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-simple-qrcode/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngx-simple-i18n"
