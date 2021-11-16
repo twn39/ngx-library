@@ -87,6 +87,7 @@ A simple vConsole integration for angular.
 #### Install
 
 ```shell
+npm i vconsole --save
 npm i ngx-vconsole-logger --save
 ```
 
