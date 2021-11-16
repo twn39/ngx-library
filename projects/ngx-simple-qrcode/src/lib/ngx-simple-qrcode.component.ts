@@ -2,6 +2,10 @@ import {Component, OnInit, AfterViewInit, ElementRef, ViewChild, Input} from '@a
 // @ts-ignore
 import kjua from 'kjua';
 
+export type RenderType = 'canvas' | 'image' | 'svg';
+export type EcLevelType = 'L' | 'M' | 'Q' | 'H';
+export type ModeType = 'plain' | 'label' | 'image';
+
 @Component({
   selector: 'ngx-simple-qrcode',
   template: `
@@ -12,7 +16,7 @@ import kjua from 'kjua';
 export class NgxSimpleQrcodeComponent implements OnInit, AfterViewInit {
 
   @Input()
-  render = "image";
+  render: RenderType = "image";
 
   @Input()
   crisp = true;
@@ -21,7 +25,7 @@ export class NgxSimpleQrcodeComponent implements OnInit, AfterViewInit {
   minVersion = 1;
 
   @Input()
-  ecLevel = 'L';
+  ecLevel: EcLevelType = 'L';
 
   @Input()
   size = 200;
@@ -42,7 +46,7 @@ export class NgxSimpleQrcodeComponent implements OnInit, AfterViewInit {
   quiet = 0;
 
   @Input()
-  mode = 'plain';
+  mode: ModeType = 'plain';
 
   @Input()
   mSize = 30;
