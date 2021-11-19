@@ -1,5 +1,5 @@
-import {Directive, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
 import { createPopper, Placement } from '@popperjs/core';
+import {Directive, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
 import {PopperContainerComponent} from "./components/popper-container/popper-container.component";
 
 @Directive({
