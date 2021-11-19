@@ -1,0 +1,6 @@
+:host[data-state='hide'] {
+  display: none;
+}
+:host[data-state='show'] {
+  display: block;
+}

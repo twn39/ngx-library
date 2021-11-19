@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
+import {CommonModule} from "@angular/common";
 import {NgxSimplePopperDirective} from "./ngx-simple-popper.directive";
 import { PopperContainerComponent } from './components/popper-container/popper-container.component';
-
-
 
 @NgModule({
   declarations: [
@@ -10,6 +9,7 @@ import { PopperContainerComponent } from './components/popper-container/popper-c
     NgxSimplePopperDirective,
   ],
   imports: [
+    CommonModule,
   ],
   exports: [
     PopperContainerComponent,
