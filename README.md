@@ -6,6 +6,7 @@
 * [ngx-simple-i18n](https://github.com/twn39/ngx-library/tree/master/projects/ngx-simple-i18n)
 * [ngx-vconsole-logger](https://github.com/twn39/ngx-library/tree/master/projects/ngx-vconsole-logger)
 * [ngx-simple-qrcode](https://github.com/twn39/ngx-library/tree/master/projects/ngx-simple-qrcode)
+* [ngx-simple-popper](https://github.com/twn39/ngx-library/tree/master/projects/ngx-simple-popper)
 
 
 ### Ngx-simple-i18n
