@@ -1,6 +1,18 @@
 {
   "name": "ngx-simple-popper",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "twn39",
+  "description": "popper for angular.",
+  "keywords": ["ngx-popper", "popper", "ngx-simple-popper", "ngx", "angular"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twn39/ngx-library.git"
+  },
+  "bugs": {
+    "url": "https://github.com/twn39/ngx-library/issues"
+  },
+  "homepage": "https://github.com/twn39/ngx-library",
   "peerDependencies": {
     "@angular/common": "^12.0.0",
     "@angular/core": "^12.0.0",
