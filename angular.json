@@ -229,6 +229,37 @@
           }
         }
       }
+    },
+    "ngx-f2-chart": {
+      "projectType": "library",
+      "root": "projects/ngx-f2-chart",
+      "sourceRoot": "projects/ngx-f2-chart/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-f2-chart/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-f2-chart/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-f2-chart/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-f2-chart/src/test.ts",
+            "tsConfig": "projects/ngx-f2-chart/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-f2-chart/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngx-simple-i18n"

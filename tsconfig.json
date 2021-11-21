@@ -12,6 +12,10 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "paths": {
+      "ngx-f2-chart": [
+        "dist/ngx-f2-chart/ngx-f2-chart",
+        "dist/ngx-f2-chart"
+      ],
       "ngx-simple-i18n": [
         "dist/ngx-simple-i18n/ngx-simple-i18n",
         "dist/ngx-simple-i18n"
