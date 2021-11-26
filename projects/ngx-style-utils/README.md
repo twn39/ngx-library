@@ -1,24 +1,87 @@
-# NgxStyleUtils
+<div id="top"></div>
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.0.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-## Code scaffolding
+Style utils for Angular, use the angular way.
 
-Run `ng generate component component-name --project ngx-style-utils` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-style-utils`.
-> Note: Don't forget to add `--project ngx-style-utils` or else it will be added to the default project in your `angular.json` file. 
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-## Build
+<!-- GETTING STARTED -->
+## Getting Started
 
-Run `ng build ngx-style-utils` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Prerequisites
 
-## Publishing
+* npm
+  ```sh
+  npm i ngx-style-utils --save
+  ```
 
-After building your library with `ng build ngx-style-utils`, go to the dist folder `cd dist/ngx-style-utils` and run `npm publish`.
+### Installation
 
-## Running unit tests
+1. Enter your project directory
+2. Install NPM packages
+   ```sh
+    npm i ngx-style-utils --save
+   ```
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-Run `ng test ngx-style-utils` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Further help
+## Usage
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Load the module:
+
+```ts
+import {NgxStyleUtilsModule} from "ngx-style-utils";
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgxStyleUtilsModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+And use in template:
+
+```html
+<div box padding="1rem" flex justifyContent="center" >
+  <span box display="inline-block"
+        boxShadow="0 0 3px #0000ff"
+        padding="6px 2rem" color="#fff"
+        background="blue" border="1px solid rgba(0, 0, 0, 0.8)"
+        borderRadius="5px">Hello world.</span>
+</div>
+```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Contributing
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
