@@ -28,6 +28,10 @@
         "dist/ngx-simple-qrcode/ngx-simple-qrcode",
         "dist/ngx-simple-qrcode"
       ],
+      "ngx-style-utils": [
+        "dist/ngx-style-utils/ngx-style-utils",
+        "dist/ngx-style-utils"
+      ],
       "ngx-vconsole-logger": [
         "dist/ngx-vconsole-logger/ngx-vconsole-logger",
         "dist/ngx-vconsole-logger"
