@@ -30,3 +30,5 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+
+![Alt](https://repobeats.axiom.co/api/embed/7cff2224da16e8d4b822dea98030601641d6413f.svg "Repobeats analytics image")
