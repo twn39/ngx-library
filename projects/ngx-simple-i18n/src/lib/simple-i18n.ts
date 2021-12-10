@@ -101,7 +101,6 @@ export class I18nTranslatePipe implements OnDestroy, PipeTransform {
   private _latestValue: any = '';
   private _subscription: Subscription | null = null;
   private _i18n$: Observable<any> | null = null;
-  private _currentValue: string | null  = null;
 
   constructor(
     private simpleI18n: SimpleI18n,
@@ -110,23 +109,12 @@ export class I18nTranslatePipe implements OnDestroy, PipeTransform {
 
   transform(value: string, ...args: unknown[]): string {
     if (!this._i18n$) {
-      this._currentValue = value;
       this._i18n$ = this.simpleI18n.translation$;
       this._subscription = this._i18n$.pipe(map(x => x?.[value])).subscribe(it => {
         this._latestValue = it;
         this._cdRef.markForCheck();
       });
-      return this._latestValue;
     }
-    /**
-    When the reference of the expression changes, the input value
-    will change, so unsubscribes from the old `Observable` and subscribes to the new one.
-    */
-    if (this._currentValue !== value) {
-      this._dispose();
-      return this.transform(value);
-    }
-
     return this._latestValue;
   }
 
