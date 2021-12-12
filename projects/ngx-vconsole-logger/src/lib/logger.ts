@@ -57,7 +57,7 @@ export const ngxVconsoleLoggerFactory = (opts: any) => {
 
 export const ngxVconsoleLoggerOptionsProvider = {
   provide: NGX_VCONSOLE_LOGGER_OPTIONS,
-  useValue: {debug: true}
+  useValue: {debug: false}
 };
 
 export const ngxVconsoleLoggerProvider = {

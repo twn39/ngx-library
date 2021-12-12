@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {NGX_VCONSOLE_LOGGER_OPTIONS, ngxVconsoleLoggerOptionsProvider, ngxVconsoleLoggerProvider} from './logger';
 import { ModuleWithProviders } from '@angular/core';
+import {NGX_VCONSOLE_LOGGER_OPTIONS, ngxVconsoleLoggerOptionsProvider, ngxVconsoleLoggerProvider} from './logger';
 
 @NgModule({
   declarations: [],
@@ -14,8 +14,7 @@ import { ModuleWithProviders } from '@angular/core';
   ]
 })
 export class NgxVConsoleLoggerModule {
-
-  static register(debug = true): ModuleWithProviders<NgxVConsoleLoggerModule> {
+  static register(debug = false): ModuleWithProviders<NgxVConsoleLoggerModule> {
     return {
       ngModule: NgxVConsoleLoggerModule,
       providers: [
