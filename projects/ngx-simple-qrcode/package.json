@@ -1,6 +1,6 @@
 {
   "name": "ngx-simple-qrcode",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "author": "twn39",
   "description": "qrcode for angular.",
@@ -14,8 +14,8 @@
   },
   "homepage": "https://github.com/twn39/ngx-library",
   "peerDependencies": {
-    "@angular/common": "^12.0.0",
-    "@angular/core": "^12.0.0",
+    "@angular/common": ">=11.0.0",
+    "@angular/core": ">=11.0.0",
     "kjua": "^0.9.0"
   },
   "dependencies": {

@@ -1,6 +1,6 @@
 {
   "name": "ngx-simple-popper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author": "twn39",
   "description": "popper for angular.",
@@ -14,8 +14,8 @@
   },
   "homepage": "https://github.com/twn39/ngx-library",
   "peerDependencies": {
-    "@angular/common": "^12.0.0",
-    "@angular/core": "^12.0.0",
+    "@angular/common": ">=11.0.0",
+    "@angular/core": ">=11.0.0",
     "@popperjs/core": "^2.10.2"
   },
   "dependencies": {

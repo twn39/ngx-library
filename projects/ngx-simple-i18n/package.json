@@ -1,6 +1,6 @@
 {
   "name": "ngx-simple-i18n",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "author": "twn39",
   "description": "a simple I18n library for angular.",
@@ -14,8 +14,8 @@
   },
   "homepage": "https://github.com/twn39/ngx-library",
   "peerDependencies": {
-    "@angular/common": "^12.0.0",
-    "@angular/core": "^12.0.0"
+    "@angular/common": ">=11.0.0",
+    "@angular/core": ">=11.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
